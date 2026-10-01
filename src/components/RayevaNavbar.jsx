@@ -12,42 +12,39 @@ export default function RayevaNavbar({ cartCount = 2, onOpenCart }) {
     'About Us',
     'Brands',
     'Shop',
-    'Corporate',
     'Blog',
     'Contact',
-    'Bulk Orders',
   ];
 
   return (
     <>
-      <header className="relative z-30 w-full pt-3 md:pt-5 px-3 md:px-6 max-w-[1440px] mx-auto">
-        <nav className="flex items-center justify-between py-2 px-4 md:px-6 rounded-full bg-white/45 backdrop-blur-xl border border-white/60 shadow-lg shadow-black/5 transition-all">
-          
+      <header className="relative z-30 w-full pt-2.5 sm:pt-4 md:pt-6 px-2.5 sm:px-4 flex justify-center mx-auto shrink-0">
+        <nav className="inline-flex items-center justify-between gap-3 sm:gap-6 md:gap-10 py-1.5 sm:py-2 px-3 sm:px-6 md:px-8 rounded-full bg-white/45 backdrop-blur-xl border border-white/60 shadow-lg shadow-black/5 transition-all max-w-full">
+
           {/* LEFT: Rayeva Logo + Brand Name */}
-          <div className="flex items-center gap-3 shrink-0">
+          <div className="flex items-center gap-2 shrink-0">
             <a href="#" className="flex items-center gap-2 group">
-              <img 
-                src="/rayeva_logo.png" 
-                alt="Rayeva Logo" 
-                className="h-8 w-auto md:h-9 object-contain transition-transform group-hover:scale-105"
+              <img
+                src="/rayeva_logo.png"
+                alt="Rayeva Logo"
+                className="h-7 w-auto md:h-8.5 object-contain transition-transform group-hover:scale-105"
               />
-              <span className="text-xl md:text-2xl font-bold tracking-tight text-[#165a3d] font-sans">
+              <span className="text-base sm:text-xl md:text-2xl font-bold tracking-tight text-[#165a3d] font-sans">
                 Rayeva
               </span>
             </a>
           </div>
 
           {/* CENTER: Navigation Links */}
-          <div className="hidden lg:flex items-center gap-4 xl:gap-6">
+          <div className="hidden sm:flex items-center gap-2 md:gap-4">
             {navLinks.map((label) => (
               <button
                 key={label}
                 onClick={() => setActiveLink(label)}
-                className={`text-[13px] xl:text-[14px] font-bold transition-all py-1 px-1 cursor-pointer whitespace-nowrap ${
-                  activeLink === label
-                    ? 'text-gray-900 border-b-2 border-emerald-600'
-                    : 'text-gray-900 hover:text-emerald-700'
-                }`}
+                className={`text-xs md:text-sm font-semibold tracking-wide transition-all py-1.5 px-3.5 rounded-full cursor-pointer whitespace-nowrap ${activeLink === label
+                    ? 'text-gray-900 bg-white/70 shadow-2xs font-bold'
+                    : 'text-gray-800 hover:text-emerald-800 hover:bg-white/45'
+                  }`}
               >
                 {label}
               </button>
@@ -56,7 +53,7 @@ export default function RayevaNavbar({ cartCount = 2, onOpenCart }) {
 
           {/* RIGHT: Search, Cart, User Profile Icons */}
           <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
-            
+
             {/* Search Icon Button */}
             <button
               onClick={() => setIsSearchModalOpen(true)}
@@ -114,9 +111,8 @@ export default function RayevaNavbar({ cartCount = 2, onOpenCart }) {
                     setActiveLink(label);
                     setMobileMenuOpen(false);
                   }}
-                  className={`text-left text-sm font-semibold py-2 px-3 rounded-xl transition-colors ${
-                    activeLink === label ? 'bg-emerald-100/80 text-emerald-900 font-bold' : 'text-gray-800 hover:bg-white/60'
-                  }`}
+                  className={`text-left text-sm font-semibold py-2 px-3 rounded-xl transition-colors ${activeLink === label ? 'bg-emerald-100/80 text-emerald-900 font-bold' : 'text-gray-800 hover:bg-white/60'
+                    }`}
                 >
                   {label}
                 </button>
