@@ -40,9 +40,9 @@ export default function RayevaHero() {
       {/* TOP NAVIGATION BAR */}
       <RayevaNavbar />
 
-      {/* HERO MAIN BODY: Left typography content + Center floating impact cards */}
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-8 flex-1 flex flex-col justify-center my-auto">
-        <div className="relative w-full min-h-[460px] md:min-h-[520px] lg:min-h-[560px] flex items-center">
+      {/* HERO MAIN BODY: Left typography content + Right floating impact cards */}
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-8 flex-1 flex flex-col justify-center my-auto py-3 md:py-6">
+        <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12 min-h-[440px] md:min-h-[500px]">
           
           {/* Left Content Column */}
           <HeroContent />
