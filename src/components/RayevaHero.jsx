@@ -20,16 +20,16 @@ export default function RayevaHero() {
   return (
     <section className="relative h-screen max-h-screen w-full flex flex-col justify-between overflow-hidden bg-slate-900 select-none">
       
-      {/* HERO BACKGROUND IMAGE */}
+      {/* HERO BACKGROUND IMAGE (SOFTLY BLURRED TO FOCUS ON CONTENT) */}
       <img
         src="/new-img.png"
         alt="Rayeva Background"
-        className="absolute inset-0 h-full w-full object-cover object-center md:object-[60%_center] z-0 pointer-events-none"
+        className="absolute inset-0 h-full w-full object-cover object-center md:object-[60%_center] z-0 pointer-events-none blur-[3px] scale-105 transition-all duration-700"
       />
 
-      {/* SUBTLE OVERLAY for text readability without darkening background video */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/45 via-white/15 to-transparent pointer-events-none z-0" />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/20 pointer-events-none z-0" />
+      {/* SUBTLE OVERLAY WITH BACKDROP BLUR for text & card pop */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/55 via-white/25 to-transparent pointer-events-none z-0 backdrop-blur-[2px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/35 via-transparent to-white/20 pointer-events-none z-0" />
 
       {/* TOP NAVIGATION BAR */}
       <RayevaNavbar />
