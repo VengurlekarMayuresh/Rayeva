@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Search, ShoppingCart, User, Menu, X } from 'lucide-react';
 import SearchModal from './SearchModal';
 
 export default function RayevaNavbar({ cartCount = 2, onOpenCart }) {
+  const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const [activeLink, setActiveLink] = useState('Home');
@@ -16,14 +18,21 @@ export default function RayevaNavbar({ cartCount = 2, onOpenCart }) {
     'Contact',
   ];
 
+  const handleNavClick = (label) => {
+    setActiveLink(label);
+    if (label === 'Home') {
+      navigate('/');
+    }
+  };
+
   return (
     <>
       <header className="relative z-30 w-full pt-2.5 sm:pt-4 md:pt-6 px-2.5 sm:px-4 flex justify-center mx-auto shrink-0">
         <nav className="inline-flex items-center justify-between gap-3 sm:gap-6 md:gap-10 py-1.5 sm:py-2 px-3 sm:px-6 md:px-8 rounded-full bg-white/45 backdrop-blur-xl border border-white/60 shadow-lg shadow-black/5 transition-all max-w-full">
 
-          {/* LEFT: Rayeva Logo + Brand Name */}
+          {/* LEFT: Rayeva Logo + Brand Name (Redirects to Home Page /) */}
           <div className="flex items-center gap-2 shrink-0">
-            <a href="#" className="flex items-center gap-2 group">
+            <Link to="/" className="flex items-center gap-2 group cursor-pointer">
               <img
                 src="/rayeva_logo.png"
                 alt="Rayeva Logo"
@@ -32,7 +41,7 @@ export default function RayevaNavbar({ cartCount = 2, onOpenCart }) {
               <span className="text-base sm:text-xl md:text-2xl font-bold tracking-tight text-[#165a3d] font-sans">
                 Rayeva
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* CENTER: Navigation Links */}
@@ -40,7 +49,7 @@ export default function RayevaNavbar({ cartCount = 2, onOpenCart }) {
             {navLinks.map((label) => (
               <button
                 key={label}
-                onClick={() => setActiveLink(label)}
+                onClick={() => handleNavClick(label)}
                 className={`text-xs md:text-sm font-semibold tracking-wide transition-all py-1.5 px-3.5 rounded-full cursor-pointer whitespace-nowrap ${activeLink === label
                     ? 'text-gray-900 bg-white/70 shadow-2xs font-bold'
                     : 'text-gray-800 hover:text-emerald-800 hover:bg-white/45'

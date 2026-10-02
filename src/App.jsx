@@ -22,9 +22,9 @@ export default function App() {
         
         {/* React Router URL Routes */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home onAddToCart={handleAddToCart} />} />
           <Route path="/category/:categoryId" element={<CategoryPage onAddToCart={handleAddToCart} />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<Home onAddToCart={handleAddToCart} />} />
         </Routes>
 
         {/* Cart Toast Notification */}

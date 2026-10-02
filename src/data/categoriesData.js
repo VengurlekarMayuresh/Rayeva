@@ -50,7 +50,7 @@ export const categoriesData = [
         reviews: 215,
         badge: 'Plastic-Free Glass Bottle',
         impact: 'Replaces 12 plastic cosmetic bottles',
-        image: 'https://images.unsplash.com/photo-1608248597263-000799965760?w=600&auto=format&fit=crop&q=80',
+        image: 'https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&auto=format&fit=crop&q=80',
         description: 'Deeply nourishing facial elixir formulated with 100% cold-pressed organic botanicals for radiant, hydrated skin.'
       },
       {

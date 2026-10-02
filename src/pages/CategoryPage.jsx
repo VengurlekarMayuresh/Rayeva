@@ -62,8 +62,9 @@ export default function CategoryPage({ onAddToCart }) {
       </video>
 
       {/* LUMINOUS MORE TRANSLUCENT WHITE FILM OVERLAY */}
-      <div className="fixed inset-0 bg-white/45 backdrop-blur-xl pointer-events-none z-0" />
-      <div className="fixed inset-0 bg-gradient-to-b from-white/30 via-transparent to-white/30 pointer-events-none z-0" />
+      {/* LUMINOUS SOFT BOTANICAL GREENISH TRANSLUCENT FILM OVERLAY */}
+      <div className="fixed inset-0 bg-emerald-950/15 backdrop-blur-xl pointer-events-none z-0" />
+      <div className="fixed inset-0 bg-gradient-to-b from-[#e6f2ec]/80 via-[#edf6f1]/70 to-[#e6f2ec]/80 pointer-events-none z-0" />
       <div className="relative z-10 flex flex-col flex-1">
         {/* Top Navbar */}
         <RayevaNavbar />

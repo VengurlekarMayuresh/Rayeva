@@ -8,6 +8,15 @@ import CategoryNavigation from './CategoryNavigation';
 export default function RayevaHero() {
   const navigate = useNavigate();
 
+  const handleExploreProducts = () => {
+    const trendingElem = document.getElementById('trending-section');
+    if (trendingElem) {
+      trendingElem.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      navigate('/category/home-living');
+    }
+  };
+
   return (
     <section className="relative h-screen max-h-screen w-full flex flex-col justify-between overflow-hidden bg-slate-900 select-none">
       
@@ -27,7 +36,7 @@ export default function RayevaHero() {
 
       {/* HERO MAIN BODY: Left typography content + Floating cards matching reference snippet */}
       <div className="relative z-10 w-full max-w-[1440px] mx-auto px-4 md:px-8 flex-1 min-h-0 flex items-center my-auto py-1 sm:py-2">
-        <HeroContent onExploreClick={() => navigate('/category/home-living')} />
+        <HeroContent onExploreClick={handleExploreProducts} />
         <FloatingImpactCards onCardClick={(cardId) => {
           if (cardId === 'products') navigate('/category/home-living');
           if (cardId === 'business') navigate('/category/packaging');

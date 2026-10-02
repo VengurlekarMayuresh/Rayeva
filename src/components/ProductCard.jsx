@@ -17,7 +17,7 @@ export default function ProductCard({ product, onAddToCart }) {
   const discount = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
 
   return (
-    <div className="group glass-panel rounded-3xl overflow-hidden flex flex-col justify-between border border-white/80 hover:border-emerald-300 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 bg-white/90">
+    <div className="group glass-panel rounded-3xl overflow-hidden flex flex-col justify-between border border-white/90 hover:border-emerald-400 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 bg-white/80 backdrop-blur-xl">
       
       {/* Product Image Container */}
       <div className="relative w-full aspect-4/3 overflow-hidden bg-gray-100">
