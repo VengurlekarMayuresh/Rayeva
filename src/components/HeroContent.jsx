@@ -6,9 +6,9 @@ export default function HeroContent({ onExploreClick, onWatchStoryClick }) {
     <div className="relative z-20 flex flex-col justify-center items-center sm:items-start text-center sm:text-left mx-auto sm:mx-0 max-w-[480px] lg:max-w-[520px] xl:max-w-[560px] py-1 md:py-2">
       
       {/* Eyebrow - Increased mobile font size */}
-      <span className="text-[11px] sm:text-[12px] font-bold tracking-[0.16em] uppercase text-gray-800 mb-2 block drop-shadow-2xs">
+      {/* <span className="text-[11px] sm:text-[12px] font-bold tracking-[0.16em] uppercase text-gray-800 mb-2 block drop-shadow-2xs">
         CONSCIOUS CHOICES × BRIGHTER TOMORROWS
-      </span>
+      </span> */}
 
       {/* Main Heading - Increased mobile font size to text-3xl */}
       <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] xl:text-[58px] font-extrabold leading-[1.08] sm:leading-[1.06] tracking-tight text-gray-900 font-sans">
