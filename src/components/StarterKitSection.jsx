@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Star, Leaf, Recycle, Heart, Globe, ShoppingBag, ArrowRight, Sparkles, Check } from 'lucide-react';
 
 export default function StarterKitSection({ onAddToCart }) {
+  const navigate = useNavigate();
   const [added, setAdded] = useState(false);
 
   const kitProduct = {
@@ -38,9 +40,10 @@ export default function StarterKitSection({ onAddToCart }) {
 
               {/* Product Image */}
               <img
+                onClick={() => navigate('/product/starter-kit-1')}
                 src="/starter-kit.png"
                 alt="Rayeva Starter Kit"
-                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 cursor-pointer"
               />
 
               {/* Top Left Discount Badge */}

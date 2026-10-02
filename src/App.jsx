@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import CategoryPage from './pages/CategoryPage';
+import ProductDetailPage from './pages/ProductDetailPage';
+import AllProductsPage from './pages/AllProductsPage';
 import './styles/rayeva.css';
 
 export default function App() {
@@ -23,7 +25,10 @@ export default function App() {
         {/* React Router URL Routes */}
         <Routes>
           <Route path="/" element={<Home onAddToCart={handleAddToCart} />} />
+          <Route path="/shop" element={<AllProductsPage onAddToCart={handleAddToCart} />} />
+          <Route path="/products" element={<AllProductsPage onAddToCart={handleAddToCart} />} />
           <Route path="/category/:categoryId" element={<CategoryPage onAddToCart={handleAddToCart} />} />
+          <Route path="/product/:productId" element={<ProductDetailPage onAddToCart={handleAddToCart} />} />
           <Route path="*" element={<Home onAddToCart={handleAddToCart} />} />
         </Routes>
 

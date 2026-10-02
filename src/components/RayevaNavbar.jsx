@@ -22,6 +22,10 @@ export default function RayevaNavbar({ cartCount = 2, onOpenCart }) {
     setActiveLink(label);
     if (label === 'Home') {
       navigate('/');
+    } else if (label === 'Shop') {
+      navigate('/shop');
+    } else if (label === 'Brands' || label === 'About Us') {
+      navigate('/shop');
     }
   };
 
@@ -117,7 +121,7 @@ export default function RayevaNavbar({ cartCount = 2, onOpenCart }) {
                 <button
                   key={label}
                   onClick={() => {
-                    setActiveLink(label);
+                    handleNavClick(label);
                     setMobileMenuOpen(false);
                   }}
                   className={`text-left text-sm font-semibold py-2 px-3 rounded-xl transition-colors ${activeLink === label ? 'bg-emerald-100/80 text-emerald-900 font-bold' : 'text-gray-800 hover:bg-white/60'

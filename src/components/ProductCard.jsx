@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Star, ShoppingBag, Check, ShieldCheck, Leaf } from 'lucide-react';
 
 export default function ProductCard({ product, onAddToCart }) {
+  const navigate = useNavigate();
   const [added, setAdded] = useState(false);
+
+  const handleCardClick = () => {
+    navigate(`/product/${product.id || 'impact-water'}`);
+  };
 
   const handleAdd = () => {
     setAdded(true);
@@ -20,7 +26,7 @@ export default function ProductCard({ product, onAddToCart }) {
     <div className="group glass-panel rounded-3xl overflow-hidden flex flex-col justify-between border border-white/90 hover:border-emerald-400 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 bg-white/80 backdrop-blur-xl">
       
       {/* Product Image Container */}
-      <div className="relative w-full aspect-4/3 overflow-hidden bg-gray-100">
+      <div onClick={handleCardClick} className="relative w-full aspect-4/3 overflow-hidden bg-gray-100 cursor-pointer">
         <img
           src={product.image}
           alt={product.name}
@@ -60,7 +66,7 @@ export default function ProductCard({ product, onAddToCart }) {
           </div>
 
           {/* Product Title */}
-          <h3 className="text-base font-bold text-gray-900 leading-snug group-hover:text-emerald-800 transition-colors line-clamp-2">
+          <h3 onClick={handleCardClick} className="text-base font-bold text-gray-900 leading-snug group-hover:text-emerald-800 transition-colors line-clamp-2 cursor-pointer">
             {product.name}
           </h3>
 

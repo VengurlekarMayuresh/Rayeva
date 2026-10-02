@@ -21,8 +21,8 @@ export default function TrendingSection({ onAddToCart }) {
     displayedProducts = allTrendingProducts.filter(p => p.badge.toLowerCase().includes('glass') || p.badge.toLowerCase().includes('organic'));
   }
 
-  // Limit to top 6 items for clean section display
-  const featuredTrending = displayedProducts.slice(0, 6);
+  // Limit to top 8 items for a balanced 4-column layout display
+  const featuredTrending = displayedProducts.slice(0, 8);
 
   return (
     <section id="trending-section" className="w-full max-w-[1360px] mx-auto px-4 md:px-8 py-4 sm:py-15 relative z-10 scroll-mt-6">
@@ -66,8 +66,8 @@ export default function TrendingSection({ onAddToCart }) {
         </div>
       </div>
 
-      {/* TRENDING PRODUCT CARDS GRID */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {/* TRENDING PRODUCT CARDS GRID (4-COLUMN LAYOUT) */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
         {featuredTrending.map((product) => (
           <ProductCard
             key={product.id}
@@ -80,7 +80,7 @@ export default function TrendingSection({ onAddToCart }) {
       {/* FOOTER CTA BAR */}
       <div className="mt-12 text-center">
         <button
-          onClick={() => navigate('/category/food-wellness')}
+          onClick={() => navigate('/shop')}
           className="inline-flex items-center gap-2 bg-emerald-800 hover:bg-emerald-900 text-white text-xs sm:text-sm font-bold px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:-translate-y-0.5"
         >
           <span>Browse All Categories</span>
