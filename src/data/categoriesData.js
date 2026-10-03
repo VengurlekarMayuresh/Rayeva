@@ -5,7 +5,7 @@ export const categoriesData = [
     tagline: 'Organic, ethically sourced & regenerative nutrition',
     description: 'Nourish your body and planet with certified organic superfoods, regenerative tea blends, artisanal plant protein, and zero-chemical wellness formulations.',
     iconName: 'Utensils',
-    coverImage: '/viewUI/food.png',
+    coverImage: '/viewUI/food and wellness.png',
     products: [
       {
         id: 'fw-1',
@@ -191,7 +191,7 @@ export const categoriesData = [
     tagline: 'Clean, cruelty-free & zero-waste personal care',
     description: 'Clean skincare and personal hygiene formulated with wildcrafted botanicals, microplastic-free ingredients, and plastic-free refillable packaging.',
     iconName: 'Flower2',
-    coverImage: '/viewUI/beauty.png',
+    coverImage: '/viewUI/beauty and personal care.png',
     products: [
       {
         id: 'bc-1',
@@ -333,7 +333,7 @@ export const categoriesData = [
     tagline: 'Eliminate single-use plastic from daily living',
     description: 'Durable, reusable, and biodegradable replacements for everyday single-use items. Designed for circular longevity and zero landfill footprint.',
     iconName: 'Recycle',
-    coverImage: '/viewUI/zerowaste.png',
+    coverImage: '/viewUI/zero waste everday ess.png',
     products: [
       {
         id: 'zw-1',
@@ -475,7 +475,7 @@ export const categoriesData = [
     tagline: 'Ethical apparel, upcycled accessories & non-toxic toys',
     description: 'Fair-trade slow fashion crafted from organic fibers, recycled textiles, and non-toxic children items made with natural plant dyes.',
     iconName: 'ShoppingBag',
-    coverImage: '/viewUI/fashion.png',
+    coverImage: '/viewUI/fashion and acc.png',
     products: [
       {
         id: 'fk-1',
@@ -573,7 +573,7 @@ export const categoriesData = [
     tagline: 'Sustainable home decor, kitchenware & linen',
     description: 'Transform your indoor spaces with bamboo furniture, compostable kitchen items, organic bedding, and artisan-crafted eco decor.',
     iconName: 'Leaf',
-    coverImage: '/viewUI/home.png',
+    coverImage: '/viewUI/home and living.png',
     products: [
       {
         id: 'hl-1',
@@ -671,7 +671,7 @@ export const categoriesData = [
     tagline: 'Meaningful eco gift boxes & corporate hampers',
     description: 'Curated sustainable gift hampers, plantable seed paper goods, and eco gift sets for birthdays, corporate milestones, and celebrations.',
     iconName: 'Gift',
-    coverImage: '/viewUI/gifts.png',
+    coverImage: '/viewUI/gift.png',
     products: [
       {
         id: 'cg-1',

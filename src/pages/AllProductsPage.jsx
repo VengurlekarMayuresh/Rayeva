@@ -90,22 +90,24 @@ export default function AllProductsPage({ onAddToCart }) {
   };
 
   return (
-    <div className="min-h-screen w-full bg-slate-900 text-gray-900 flex flex-col justify-between selection:bg-emerald-500 selection:text-white relative">
+    <div className="min-h-screen w-full bg-[#f4f8f5] text-gray-900 flex flex-col justify-between selection:bg-emerald-500 selection:text-white relative">
       
-      {/* BACKGROUND MP4 VIDEO */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none"
-      >
-        <source src="/rayeva-hero.mp4" type="video/mp4" />
-      </video>
+      {/* Greenish Landscape Background Layer with Blur */}
+      <div 
+        className="fixed inset-0 w-full h-full z-0 pointer-events-none overflow-hidden"
+        style={{
+          backgroundImage: "url('/greenish.png')",
+          backgroundRepeat: 'repeat-y',
+          backgroundSize: '100% auto',
+          backgroundPosition: 'top center',
+          filter: 'blur(8px)',
+          transform: 'scale(1.03)',
+          transformOrigin: 'top center',
+        }}
+      />
 
-      {/* LUMINOUS SOFT BOTANICAL TRANSLUCENT FILM OVERLAY */}
-      <div className="fixed inset-0 bg-emerald-950/15 backdrop-blur-xl pointer-events-none z-0" />
-      <div className="fixed inset-0 bg-gradient-to-b from-[#e6f2ec]/80 via-[#edf6f1]/70 to-[#e6f2ec]/80 pointer-events-none z-0" />
+      {/* Translucent veil so the greenish nature background is clearly visible */}
+      <div className="fixed inset-0 bg-[#f4f8f5]/45 pointer-events-none z-0" />
 
       <div className="relative z-10 flex flex-col flex-1">
         
@@ -139,7 +141,7 @@ export default function AllProductsPage({ onAddToCart }) {
           </div>
 
           {/* PAGE HERO HEADER BLOCK */}
-          <div className="glass-panel rounded-3xl p-6 sm:p-8 md:p-10 mb-8 border border-white/80 shadow-xl bg-white/80 backdrop-blur-xl relative overflow-hidden">
+          {/* <div className="glass-panel rounded-3xl p-6 sm:p-8 md:p-10 mb-8 border border-white/80 shadow-xl bg-white/80 backdrop-blur-xl relative overflow-hidden">
             <div className="max-w-3xl relative z-10">
               <div className="inline-flex items-center gap-2 bg-emerald-500/10 text-emerald-800 text-xs font-extrabold px-3.5 py-1.5 rounded-full mb-3 border border-emerald-500/20">
                 <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
@@ -152,10 +154,10 @@ export default function AllProductsPage({ onAddToCart }) {
                 Discover our complete collection of certified organic, zero-waste, plastic-free, and ethically crafted products. Verified for minimal environmental impact.
               </p>
             </div>
-          </div>
+          </div> */}
 
           {/* CATEGORY FILTER TABS BAR */}
-          <div className="glass-panel rounded-2xl p-2.5 sm:p-3 mb-6 border border-white/80 shadow-md bg-white/80 backdrop-blur-xl">
+          {/* <div className="glass-panel rounded-2xl p-2.5 sm:p-3 mb-6 border border-white/80 shadow-md bg-white/80 backdrop-blur-xl">
             <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
               <span className="text-xs font-bold text-gray-700 flex items-center gap-1.5 ml-2 mr-1 shrink-0">
                 <Filter className="w-4 h-4 text-emerald-700" /> Categories:
@@ -174,7 +176,7 @@ export default function AllProductsPage({ onAddToCart }) {
                 </button>
               ))}
             </div>
-          </div>
+          </div> */}
 
           {/* SECONDARY FILTER & SEARCH BAR */}
           <div className="glass-panel rounded-2xl p-4 mb-8 border border-white/80 shadow-lg flex flex-wrap items-center justify-between gap-4 bg-white/85 backdrop-blur-xl">
@@ -242,9 +244,9 @@ export default function AllProductsPage({ onAddToCart }) {
 
           </div>
 
-          {/* ALL PRODUCTS GRID */}
+          {/* ALL PRODUCTS GRID (1 col < 350px, 2 cols 350px-500px, 3-4 cols desktop) */}
           {filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 min-[350px]:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 min-[350px]:gap-3.5 sm:gap-6">
               {filteredProducts.map((product) => (
                 <ProductCard
                   key={product.id}

@@ -48,23 +48,24 @@ export default function CategoryPage({ onAddToCart }) {
   }
 
   return (
-    <div className="min-h-screen w-full bg-slate-900 text-gray-900 flex flex-col justify-between selection:bg-emerald-500 selection:text-white relative">
+    <div className="min-h-screen w-full bg-[#f4f8f5] text-gray-900 flex flex-col justify-between selection:bg-emerald-500 selection:text-white relative">
       
-      {/* BACKGROUND MP4 VIDEO */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="fixed inset-0 w-full h-full object-cover z-0 pointer-events-none"
-      >
-        <source src="/rayeva-hero.mp4" type="video/mp4" />
-      </video>
+      {/* Greenish Landscape Background Layer with Blur */}
+      <div 
+        className="fixed inset-0 w-full h-full z-0 pointer-events-none overflow-hidden"
+        style={{
+          backgroundImage: "url('/greenish.png')",
+          backgroundRepeat: 'repeat-y',
+          backgroundSize: '100% auto',
+          backgroundPosition: 'top center',
+          filter: 'blur(8px)',
+          transform: 'scale(1.03)',
+          transformOrigin: 'top center',
+        }}
+      />
 
-      {/* LUMINOUS MORE TRANSLUCENT WHITE FILM OVERLAY */}
-      {/* LUMINOUS SOFT BOTANICAL GREENISH TRANSLUCENT FILM OVERLAY */}
-      <div className="fixed inset-0 bg-emerald-950/15 backdrop-blur-xl pointer-events-none z-0" />
-      <div className="fixed inset-0 bg-gradient-to-b from-[#e6f2ec]/80 via-[#edf6f1]/70 to-[#e6f2ec]/80 pointer-events-none z-0" />
+      {/* Translucent veil so the greenish nature background is clearly visible */}
+      <div className="fixed inset-0 bg-[#f4f8f5]/45 pointer-events-none z-0" />
       <div className="relative z-10 flex flex-col flex-1">
         {/* Top Navbar */}
         <RayevaNavbar />
@@ -152,9 +153,9 @@ export default function CategoryPage({ onAddToCart }) {
 
           </div>
 
-          {/* PRODUCT CARDS GRID */}
+          {/* PRODUCT CARDS GRID (1 col < 350px, 2 cols 350px-500px, 3-4 cols desktop) */}
           {filteredProducts.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 min-[350px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 min-[350px]:gap-3.5 sm:gap-6 lg:gap-8">
               {filteredProducts.map((product) => (
                 <ProductCard
                   key={product.id}

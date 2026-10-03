@@ -55,8 +55,8 @@ export default function RayevaNavbar({ cartCount = 2, onOpenCart }) {
                 key={label}
                 onClick={() => handleNavClick(label)}
                 className={`text-xs md:text-sm font-semibold tracking-wide transition-all py-1.5 px-3.5 rounded-full cursor-pointer whitespace-nowrap ${activeLink === label
-                    ? 'text-gray-900 bg-white/70 shadow-2xs font-bold'
-                    : 'text-gray-800 hover:text-emerald-800 hover:bg-white/45'
+                  ? 'text-gray-900 bg-white/70 shadow-2xs font-bold'
+                  : 'text-gray-800 hover:text-emerald-800 hover:bg-white/45'
                   }`}
               >
                 {label}

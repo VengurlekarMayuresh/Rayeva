@@ -25,7 +25,7 @@ export default function TrendingSection({ onAddToCart }) {
   const featuredTrending = displayedProducts.slice(0, 8);
 
   return (
-    <section id="trending-section" className="w-full max-w-[1360px] mx-auto px-4 md:px-8 py-4 sm:py-15 relative z-10 scroll-mt-6">
+    <section id="trending-section" className="w-full max-w-[1360px] mx-auto px-4 md:px-8 py-4 sm:py-5 relative z-10 scroll-mt-6">
 
       {/* SECTION HEADER BLOCK */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-5">
@@ -66,8 +66,8 @@ export default function TrendingSection({ onAddToCart }) {
         </div>
       </div>
 
-      {/* TRENDING PRODUCT CARDS GRID (4-COLUMN LAYOUT) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+      {/* TRENDING PRODUCT CARDS GRID (1 col < 350px, 2 cols 350px-500px, 3-4 cols desktop) */}
+      <div className="grid grid-cols-1 min-[350px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 min-[350px]:gap-3.5 sm:gap-6 lg:gap-8">
         {featuredTrending.map((product) => (
           <ProductCard
             key={product.id}

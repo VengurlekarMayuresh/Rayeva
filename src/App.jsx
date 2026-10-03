@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import CategoryPage from './pages/CategoryPage';
 import ProductDetailPage from './pages/ProductDetailPage';
 import AllProductsPage from './pages/AllProductsPage';
+import Footer from './components/Footer';
 import './styles/rayeva.css';
 
 export default function App() {
@@ -20,17 +21,22 @@ export default function App() {
 
   return (
     <BrowserRouter>
-      <div className="min-h-screen w-full font-sans antialiased text-gray-900 bg-gray-900 relative">
+      <div className="min-h-screen w-full font-sans antialiased text-gray-900 bg-[#f4f8f5] relative flex flex-col justify-between">
         
-        {/* React Router URL Routes */}
-        <Routes>
-          <Route path="/" element={<Home onAddToCart={handleAddToCart} />} />
-          <Route path="/shop" element={<AllProductsPage onAddToCart={handleAddToCart} />} />
-          <Route path="/products" element={<AllProductsPage onAddToCart={handleAddToCart} />} />
-          <Route path="/category/:categoryId" element={<CategoryPage onAddToCart={handleAddToCart} />} />
-          <Route path="/product/:productId" element={<ProductDetailPage onAddToCart={handleAddToCart} />} />
-          <Route path="*" element={<Home onAddToCart={handleAddToCart} />} />
-        </Routes>
+        {/* Main Content Area */}
+        <div className="flex-1 w-full">
+          <Routes>
+            <Route path="/" element={<Home onAddToCart={handleAddToCart} />} />
+            <Route path="/shop" element={<AllProductsPage onAddToCart={handleAddToCart} />} />
+            <Route path="/products" element={<AllProductsPage onAddToCart={handleAddToCart} />} />
+            <Route path="/category/:categoryId" element={<CategoryPage onAddToCart={handleAddToCart} />} />
+            <Route path="/product/:productId" element={<ProductDetailPage onAddToCart={handleAddToCart} />} />
+            <Route path="*" element={<Home onAddToCart={handleAddToCart} />} />
+          </Routes>
+        </div>
+
+        {/* Global Footer */}
+        <Footer />
 
         {/* Cart Toast Notification */}
         {toastMessage && (
